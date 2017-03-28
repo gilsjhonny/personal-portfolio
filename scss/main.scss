@@ -1,9 +1,6 @@
 // TO-DO
-// Menu for large screens
-// Smooth Scroll
 
-
-@import url('https://fonts.googleapis.com/css?family=Arvo:400,700|Domine|Noto+Serif');
+@import url('https://fonts.googleapis.com/css?family=Arvo:400,700|Domine');
 //-----------------------------
 //  COLOR SCHEME
 //-----------------------------
@@ -13,6 +10,7 @@ $section-title-color:  #565853;
 $emphasis:             #246C5B;
 $moustache:            #42332C;
 $font-color:           #30312C;
+$nav-bg:               #c5b69f;
 $title-font-family: 'Arvo', serif;
 
 //-----------------------------
@@ -81,12 +79,23 @@ h3 {
     @include subTitle();
 }
 
+::selection {
+  background: #67BDA9; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #67BDA9; /* Gecko Browsers */
+}
+
+
 //-----------------------------
 //  Navigation
 //-----------------------------
 #navigation {
 
-    background: darken($calm,5%);
+    .menu-header {
+        background: $nav-bg;
+        border-bottom: 10px solid $section-title-color;
+    }
 
     .container {
         display: flex;
@@ -101,7 +110,8 @@ h3 {
         font-size: 3rem;
         line-height: 4rem;
         color: $section-title-color;
-        margin: 0 1rem .4rem auto;
+        margin: 0 0 .3rem auto;
+        cursor: pointer;
 
         &:focus {
             outline: 0;
@@ -131,7 +141,7 @@ h3 {
                     font-family: 'Arvo', serif;
                     font-size: 1.2rem;
                     border-top: 2px solid $calm;
-                    transition: all .2s ease-in-out;
+                    transition: all .1s ease-in-out;
 
                     &:hover {
                         color: $section-title-color;
@@ -257,6 +267,13 @@ header {
         }
     }
 
+    /* clear fix */
+    .grid:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
     article {
         position: relative;
         overflow: hidden;
@@ -294,7 +311,7 @@ header {
         img {
             padding: 5px;
             border: 2px solid $calm;
-            filter: grayscale(0%);
+            filter: grayscale(100%);
             transition: all .5s ease-in-out;
         }
 
@@ -414,3 +431,72 @@ footer {
         transform: translateY(0);
     }
 }
+
+//-----------------------------
+//  Media Queries
+//-----------------------------
+
+@media (min-width: 576px) {
+
+    #projects article .thumbnail .info h4 {
+        font-size: 1rem;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    html {
+        font-size: 16px;
+    }
+
+    #navigation {
+
+        .menu-header {
+            background: transparent;
+            border-bottom: 2px solid $section-title-color;
+            transition: border .4s ease-in;
+
+            &.nav-transform {
+                background: $nav-bg;
+                border-bottom: 6px solid $section-title-color;
+            }
+        }
+
+        #nav-menu {
+            height: auto !important;
+            display: block;
+
+            ul {
+                flex-direction: row;
+                justify-content: space-between;
+
+                li a {
+                    color: #565853;
+                    padding: 1rem 1rem;
+                    width: 160px;
+                    border: 2px solid transparent;
+                    transition: all .2s ease-in-out;
+                    margin-bottom: 10px;
+
+                    &:hover {
+                        outline-width: 0;
+                        background: #E0D0B8;
+                        border: 2px solid #756a5c;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+@media (min-width: 1200px) {
+
+    #projects article .thumbnail .info h4 {
+        font-size: 1.5rem;
+    }
+
+}
+
