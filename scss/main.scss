@@ -1,0 +1,416 @@
+// TO-DO
+// Menu for large screens
+// Smooth Scroll
+
+
+@import url('https://fonts.googleapis.com/css?family=Arvo:400,700|Domine|Noto+Serif');
+//-----------------------------
+//  COLOR SCHEME
+//-----------------------------
+$bg:                   #E0D0B8;
+$calm     :            #A69C90;
+$section-title-color:  #565853;
+$emphasis:             #246C5B;
+$moustache:            #42332C;
+$font-color:           #30312C;
+$title-font-family: 'Arvo', serif;
+
+//-----------------------------
+//  MIXINS
+//-----------------------------
+
+@mixin title {
+    &.section-title {
+        color: $section-title-color;
+        text-transform: uppercase;
+        font-family: $title-font-family;
+        font-weight: 700;
+        text-align: center;
+        border-top: 2px solid $calm;
+        border-bottom: 2px solid $calm;
+        margin-bottom: 20px;
+        padding: 8px;
+    }
+}
+
+@mixin subTitle {
+    &.sub-title {
+        color: $section-title-color;
+        text-transform: uppercase;
+        font-family: $title-font-family;
+        text-align: left;
+        border-bottom: 2px solid $calm;
+        margin-bottom: 15px;
+        padding: 5px;
+    }
+}
+
+@mixin sectionPadding {
+    padding: 15px 0;
+}
+
+@mixin button-hover($color, $perc: 20%) {
+    &:hover {
+        background: darken($color, $perc);
+    }
+}
+//-----------------------------
+
+
+html {
+    font-size: 15px;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+body {
+    background: $bg;
+    position: relative;
+}
+
+p {
+    color: $font-color;
+    font-family: 'Domine', serif;
+}
+
+h2 {
+    @include title();
+}
+
+h3 {
+    @include subTitle();
+}
+
+//-----------------------------
+//  Navigation
+//-----------------------------
+#navigation {
+
+    background: darken($calm,5%);
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .menu-btn {
+        background: transparent;
+        display: inline-block;
+        border: transparent;
+        font-size: 3rem;
+        line-height: 4rem;
+        color: $section-title-color;
+        margin: 0 1rem .4rem auto;
+
+        &:focus {
+            outline: 0;
+        }
+    }
+
+    #nav-menu {
+        flex: 1 1 100%;
+
+        ul {
+            margin: .5rem 0 0 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            li {
+
+                a {
+                    color: $section-title-color;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    text-align: center;
+                    display: block;
+                    padding: 1rem 0;
+                    font-family: 'Arvo', serif;
+                    font-size: 1.2rem;
+                    border-top: 2px solid $calm;
+                    transition: all .2s ease-in-out;
+
+                    &:hover {
+                        color: $section-title-color;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+
+//-----------------------------
+//  Header
+//-----------------------------
+
+header {
+    margin-top: 150px;
+    margin-bottom: 50px;
+    position:relative;
+
+    img.brand {
+        margin-bottom: 10px;
+    }
+    .down-arrow {
+        font-size: 6rem;
+        line-height: 4rem;
+        text-align: center;
+        animation: bouncing 1s ease-in infinite;
+        a {
+            color: $section-title-color;
+
+            &:hover {
+                color: $section-title-color
+            }
+
+            &:focus {
+                outline: 0;
+            }
+        }
+    }
+}
+
+//-----------------------------
+//  About
+//-----------------------------
+
+#about {
+    @include sectionPadding();
+
+    .profile-pic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+
+        li {
+            color: $font-color;
+            font-family: 'Domine', serif;
+            text-transform: uppercase;
+
+            .fa {
+                color: $calm;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .skills .row > *:last-child {
+        border-left: 2px solid $calm;
+    }
+
+}
+
+//-----------------------------
+//  Projects
+//-----------------------------
+
+#projects {
+    @include sectionPadding();
+
+    #filters {
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 5px;
+
+        button {
+            background: transparent;
+            border: 2px solid $calm;
+            color: $section-title-color;
+            transition: all .1s ease-in;
+            border-radius: 0;
+            margin-bottom: 10px;
+
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+
+            &:hover {
+                background: $calm;
+            }
+
+            &:focus,
+            &:active {
+                background: $calm;
+                outline: 0;
+                box-shadow: none;
+            }
+        }
+    }
+
+    article {
+        position: relative;
+        overflow: hidden;
+        padding: 15px;
+        cursor: pointer;
+
+        .thumbnail {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+
+            .info {
+                position: absolute;
+                top: 100%;
+                width: 100%;
+                height: 100%;
+                background: $calm;
+                z-index: 2;
+                transition: all .2s ease-in-out;
+
+                h4 {
+                    margin-top: 11%;
+                    color: $section-title-color;
+                    font-family: $title-font-family;
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                }
+            }
+
+            &:hover .info{
+                top: 65%;
+            }
+        }
+
+        img {
+            padding: 5px;
+            border: 2px solid $calm;
+            filter: grayscale(0%);
+            transition: all .5s ease-in-out;
+        }
+
+        &:hover img {
+            filter: grayscale(0);
+        }
+    }
+}
+
+//-----------------------------
+//  contact
+//-----------------------------
+
+#contact {
+    @include sectionPadding();
+
+    form .form-group {
+        position: relative;
+        margin-bottom: 15px;
+    }
+
+    form {
+
+        input {
+            padding: 15px 10px 15px 70px;
+        }
+
+        label {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            color: $calm;
+            font-family: 'Noto Serif', serif;
+            text-transform: uppercase;
+        }
+
+        input,
+        textarea {
+            border-radius: 0px;
+            background: transparent;
+            margin-bottom: 15px;
+            transition: all .3s ease-in;
+        }
+
+        input:active,
+        input:focus,
+        textarea:active,
+        textarea:focus {
+            border: 1px solid $calm;
+            box-shadow: 0 0 15px $calm inset;
+        }
+
+    }
+
+    button {
+        background: $calm;
+        border-radius: 0px;
+        color: $section-title-color;
+        padding: 15px 10px;
+        text-transform: uppercase;
+        font-family: $title-font-family;
+        font-size: 1.5rem;
+        font-weight: 700;
+        transition: all .2s ease-in;
+
+        &:hover {
+            color: $calm;
+            background: $section-title-color;
+        }
+    }
+
+}
+
+//-----------------------------
+//  Footer
+//-----------------------------
+footer {
+    @include sectionPadding();
+    text-align: center;
+
+    .social-links {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 10px;
+        border-top: 2px solid $calm;
+        border-bottom: 2px solid $calm;
+        padding: 15px;
+
+        a {
+            color: $section-title-color;
+            font-size: 2.5rem;
+            transition: all .3s ease-in;
+
+            &:hover {
+                color: $calm;
+            }
+        }
+    }
+
+    p {
+        color: lighten($font-color, 30%);
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+@keyframes bouncing {
+    from {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
