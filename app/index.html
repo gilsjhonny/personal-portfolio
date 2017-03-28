@@ -230,6 +230,30 @@
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
     <script>
+        $( function() {
+            var $grid = $('.grid');
+
+            $grid.imagesLoaded( function() {
+                $grid.isotope({
+                    itemSelector: '.project-item',
+                    layoutMode: 'fitRows',
+                });
+            });
+
+            // bind filter button click
+            $('#filters').on('click', 'button', function () {
+                var filterValue = $(this).attr('data-filter');
+                filterValue = filterValue;
+                $grid.isotope({ filter: filterValue });
+            });
+
+            smoothScroll.init({
+                speed: 1000,
+                offset: -45
+            });
+
+        });
+
         $(window).scroll(function () {
 
             var nav = $('.menu-header');
@@ -240,24 +264,6 @@
             } else {
                 nav.removeClass("nav-transform");
             }
-        });
-
-        smoothScroll.init({
-            speed: 1000,
-            offset: -45
-        });
-
-        // init Isotope
-        var $grid = $('.grid').isotope({
-            itemSelector: '.project-item',
-            layoutMode: 'fitRows',
-        });
-
-        // bind filter button click
-        $('#filters').on('click', 'button', function () {
-            var filterValue = $(this).attr('data-filter');
-            filterValue = filterValue;
-            $grid.isotope({ filter: filterValue });
         });
     </script>
 </body>
