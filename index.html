@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Escuela Privada | Gaspar Marcano Boada</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto" rel="stylesheet">
+
+    <!-- Archivos CSS -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="navigation" class="menu-header navbar-fixed-top" role="banner">
+        <div class="container">
+            <button type="button" class="menu-btn" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></button>
+            <nav id="nav-menu" class="collapse">
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <img class="brand" src="img/brand.svg" alt="">
+            <div class="down-arrow">
+                <a href="#about">
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="row">
+                <!--                <div class="col-xs-12">
+                    <div class="profile-pic">
+                        <img src="img/profile-pic2.svg" alt="">
+                    </div>
+                    <p>
+                        I love to design and code delightful and animated web sites with a mobile first design approach. All I need is tea, a pencil
+                        and a paper, Illustrator, Atom or Sublime and I am set to start coding.
+                    </p>
+                </div>-->
+                <div class="col-xs-12 col-md-6">
+                    <h3 class="sub-title">Who Am I?</h3>
+                    <p>
+                        I studied computer engineering so I have a strong background in programming though I always knew I love design as much as
+                        coding. Currently I am mostly focused on front-end I am basically obsessed, hopefully in a healthy
+                        manner but I know my way around back-end development (php, Laravel, API Rest, NodeJS).
+                    </p>
+                </div>
+                <div class="col-xs-12 col-md-6 skills">
+                    <h3 class="sub-title">Skills & Tools</h3>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <ul>
+                                <li><i class="fa fa-plus-square" aria-hidden="true"></i> Responsive Design</li>
+                                <li><i class="fa fa-plus-square" aria-hidden="true"></i> HTML5</li>
+                                <li><i class="fa fa-plus-square" aria-hidden="true"></i> CSS3</li>
+                                <li><i class="fa fa-plus-square" aria-hidden="true"></i> SASS</li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-6">
+                            <ul>
+                                <li><i class="fa fa-plus-square" aria-hidden="true"></i> Gulp</li>
+                                <li><i class="fa fa-plus-square" aria-hidden="true"></i> JavaScript</li>
+                                <li><i class="fa fa-plus-square" aria-hidden="true"></i> GreenSock</li>
+                                <li><i class="fa fa-plus-square" aria-hidden="true"></i> ReactJS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div id="filters" class="button-group">
+                <button class="btn" data-filter="*">Show All</button>
+                <button class="btn" data-filter=".javascript">JavaScript</button>
+                <button class="btn" data-filter=".css">CSS Images</button>
+                <button class="btn" data-filter=".site">Sites</button>
+            </div>
+            <div class="row grid">
+                <article class="project-item col-xs-12 col-sm-6 col-md-4 text-xs-center javascript"  data-category="javascript">
+                    <div class="thumbnail">
+                        <img class="img-fluid" src="img/projects/js-calculator.JPG" alt="">
+                        <div class="info">
+                            <h4>Retro Calculator</h4>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-item col-xs-12 col-sm-6 col-md-4 text-xs-center css" data-category="css">
+                    <div class="thumbnail">
+                        <img class="img-fluid" src="img/projects/ready-player-one.JPG" alt="">
+                        <div class="info">
+                            <h4>Arcade Cabinet</h4>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-item col-xs-12 col-sm-6 col-md-4 text-xs-center css" data-category="css">
+                    <div class="thumbnail">
+                        <img class="img-fluid" src="img/projects/beaver.JPG" alt="">
+                        <div class="info">
+                            <h4>Beaver Clock</h4>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-item col-xs-12 col-sm-6 col-md-4 text-xs-center css" data-category="css">
+                    <div class="thumbnail">
+                        <img class="img-fluid" src="img/projects/brian.JPG" alt="">
+                        <div class="info">
+                            <h4>Brian Griffin</h4>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-item col-xs-12 col-sm-6 col-md-4 text-xs-center site" data-category="site">
+                    <div class="thumbnail">
+                        <img class="img-fluid" src="img/projects/event-invitation.JPG" alt="">
+                        <div class="info">
+                            <h4>Event Invitation</h4>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-item col-xs-12 col-sm-6 col-md-4 text-xs-center site" data-category="site">
+                    <div class="thumbnail">
+                        <img class="img-fluid" src="img/projects/flex-panels.JPG" alt="">
+                        <div class="info">
+                            <h4>Touristic Site</h4>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-item col-xs-12 col-sm-6 col-md-4 text-xs-center site" data-category="site">
+                    <div class="thumbnail">
+                        <img class="img-fluid" src="img/projects/flipping-card.JPG" alt="">
+                        <div class="info">
+                            <h4>Product Card</h4>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-item col-xs-12 col-sm-6 col-md-4 text-xs-center css" data-category="css">
+                    <div class="thumbnail">
+                        <img class="img-fluid" src="img/projects/notebook.JPG" alt="">
+                        <div class="info">
+                            <h4>Friendly Notepad</h4>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-item col-xs-12 col-sm-6 col-md-4 text-xs-center css" data-category="css">
+                    <div class="thumbnail">
+                        <img class="img-fluid" src="img/projects/pizza-party.JPG" alt="">
+                        <div class="info">
+                            <h4>Pizza Party</h4>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="moustache">
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input class="form-control" type="text" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" type="email" name="email">
+                </div>
+                <textarea class="form-control" rows="10"></textarea>
+                <button class="btn btn-default btn-block" type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-codepen" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-free-code-camp" aria-hidden="true"></i>
+                </a>
+            </div>
+            <p>Crafted and Coded with love by Jhonny Gil</p>
+            <p>Ⓒ 2016</p>
+        </div>
+    </footer>
+    <!--        Scripts JS         -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <script>
+        // init Isotope
+        var $grid = $('.grid').isotope({
+        itemSelector: '.project-item',
+        layoutMode: 'fitRows',
+        });
+
+        // bind filter button click
+        $('#filters').on( 'click', 'button', function() {
+            var filterValue = $( this ).attr('data-filter');
+            filterValue = filterValue;
+            $grid.isotope({ filter: filterValue });
+        });
+    </script>
+</body>
+
+</html>
