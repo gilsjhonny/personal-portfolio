@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Arvo:400,700|Domine|Noto+Serif");
+@import url("https://fonts.googleapis.com/css?family=Arvo:400,700|Domine");
 html {
   font-size: 15px;
   text-rendering: optimizeLegibility !important;
@@ -32,44 +32,57 @@ h3.sub-title {
   margin-bottom: 15px;
   padding: 5px; }
 
-#navigation {
-  background: #9b8f82; }
-  #navigation .container {
+::selection {
+  background: #67BDA9;
+  /* WebKit/Blink Browsers */ }
+
+::-moz-selection {
+  background: #67BDA9;
+  /* Gecko Browsers */ }
+
+#navigation .menu-header {
+  background: #c5b69f;
+  border-bottom: 10px solid #565853; }
+
+#navigation .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; }
+
+#navigation .menu-btn {
+  background: transparent;
+  display: inline-block;
+  border: transparent;
+  font-size: 3rem;
+  line-height: 4rem;
+  color: #565853;
+  margin: 0 0 .3rem auto;
+  cursor: pointer; }
+  #navigation .menu-btn:focus {
+    outline: 0; }
+
+#navigation #nav-menu {
+  flex: 1 1 100%; }
+  #navigation #nav-menu ul {
+    margin: .5rem 0 0 0;
+    padding: 0;
+    list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center; }
-  #navigation .menu-btn {
-    background: transparent;
-    display: inline-block;
-    border: transparent;
-    font-size: 3rem;
-    line-height: 4rem;
-    color: #565853;
-    margin: 0 1rem .4rem auto; }
-    #navigation .menu-btn:focus {
-      outline: 0; }
-  #navigation #nav-menu {
-    flex: 1 1 100%; }
-    #navigation #nav-menu ul {
-      margin: .5rem 0 0 0;
-      padding: 0;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      justify-content: center; }
-      #navigation #nav-menu ul li a {
-        color: #565853;
-        text-decoration: none;
-        text-transform: uppercase;
-        text-align: center;
-        display: block;
-        padding: 1rem 0;
-        font-family: 'Arvo', serif;
-        font-size: 1.2rem;
-        border-top: 2px solid #A69C90;
-        transition: all .2s ease-in-out; }
-        #navigation #nav-menu ul li a:hover {
-          color: #565853; }
+    flex-direction: column;
+    justify-content: center; }
+    #navigation #nav-menu ul li a {
+      color: #565853;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+      display: block;
+      padding: 1rem 0;
+      font-family: 'Arvo', serif;
+      font-size: 1.2rem;
+      border-top: 2px solid #A69C90;
+      transition: all .1s ease-in-out; }
+      #navigation #nav-menu ul li a:hover {
+        color: #565853; }
 
 header {
   margin-top: 150px;
@@ -113,7 +126,8 @@ header {
     border-left: 2px solid #A69C90; }
 
 #projects {
-  padding: 15px 0; }
+  padding: 15px 0;
+  /* clear fix */ }
   #projects #filters {
     display: flex;
     justify-content: center;
@@ -134,6 +148,10 @@ header {
         background: #A69C90;
         outline: 0;
         box-shadow: none; }
+  #projects .grid:after {
+    content: '';
+    display: block;
+    clear: both; }
   #projects article {
     position: relative;
     overflow: hidden;
@@ -162,7 +180,7 @@ header {
     #projects article img {
       padding: 5px;
       border: 2px solid #A69C90;
-      filter: grayscale(0%);
+      filter: grayscale(100%);
       transition: all .5s ease-in-out; }
     #projects article:hover img {
       filter: grayscale(0); }
@@ -236,3 +254,39 @@ footer {
     transform: translateY(5px); }
   to {
     transform: translateY(0); } }
+
+@media (min-width: 576px) {
+  #projects article .thumbnail .info h4 {
+    font-size: 1rem; } }
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px; }
+  #navigation .menu-header {
+    background: transparent;
+    border-bottom: 2px solid #565853;
+    transition: border .4s ease-in; }
+    #navigation .menu-header.nav-transform {
+      background: #c5b69f;
+      border-bottom: 6px solid #565853; }
+  #navigation #nav-menu {
+    height: auto !important;
+    display: block; }
+    #navigation #nav-menu ul {
+      flex-direction: row;
+      justify-content: space-between; }
+      #navigation #nav-menu ul li a {
+        color: #565853;
+        padding: 1rem 1rem;
+        width: 160px;
+        border: 2px solid transparent;
+        transition: all .2s ease-in-out;
+        margin-bottom: 10px; }
+        #navigation #nav-menu ul li a:hover {
+          outline-width: 0;
+          background: #E0D0B8;
+          border: 2px solid #756a5c; } }
+
+@media (min-width: 1200px) {
+  #projects article .thumbnail .info h4 {
+    font-size: 1.5rem; } }

@@ -10,31 +10,35 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto" rel="stylesheet">
 
     <!-- Archivos CSS -->
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#nav-menu">
 
-    <div id="navigation" class="menu-header navbar-fixed-top" role="banner">
-        <div class="container">
-            <button type="button" class="menu-btn" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></button>
-            <nav id="nav-menu" class="collapse">
-                <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact Me</a></li>
-                </ul>
-            </nav>
-        </div>
+    <div id="navigation">
+        <nav class="menu-header navbar-fixed-top" role="banner">
+            <div class="container">
+                <button type="button" class="menu-btn hidden-md-up" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                <nav id="nav-menu" class="collapse">
+                    <ul class="nav">
+                        <li><a data-scroll href="#home">Home</a></li>
+                        <li><a data-scroll href="#about">About Me</a></li>
+                        <li><a data-scroll href="#projects">Projects</a></li>
+                        <li><a data-scroll href="#connect">Connect</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </nav>
     </div>
 
-    <header>
+    <header id="home">
         <div class="container">
             <img class="brand" src="img/brand.svg" alt="">
             <div class="down-arrow">
-                <a href="#about">
+                <a data-scroll href="#about">
                     <i class="fa fa-caret-down" aria-hidden="true"></i>
                 </a>
             </div>
@@ -58,8 +62,8 @@
                     <h3 class="sub-title">Who Am I?</h3>
                     <p>
                         I studied computer engineering so I have a strong background in programming though I always knew I love design as much as
-                        coding. Currently I am mostly focused on front-end I am basically obsessed, hopefully in a healthy
-                        manner but I know my way around back-end development (php, Laravel, API Rest, NodeJS).
+                        coding. Currently I am mostly focused on front-end development and dedicating my free time to learn
+                        about the ReactJS ecosystem. I enjoy designing from scratch as much as making other's designs alive.
                     </p>
                 </div>
                 <div class="col-xs-12 col-md-6 skills">
@@ -67,17 +71,20 @@
                     <div class="row">
                         <div class="col-xs-6">
                             <ul>
-                                <li><i class="fa fa-plus-square" aria-hidden="true"></i> Responsive Design</li>
+                                <li><i class="fa fa-plus-square" aria-hidden="true"></i> Affinity Designer</li>
+                                <li><i class="fa fa-plus-square" aria-hidden="true"></i> Photoshop</li>
+                                <li><i class="fa fa-plus-square" aria-hidden="true"></i> Mobile First</li>
                                 <li><i class="fa fa-plus-square" aria-hidden="true"></i> HTML5</li>
                                 <li><i class="fa fa-plus-square" aria-hidden="true"></i> CSS3</li>
-                                <li><i class="fa fa-plus-square" aria-hidden="true"></i> SASS</li>
+
                             </ul>
                         </div>
                         <div class="col-xs-6">
                             <ul>
+                                <li><i class="fa fa-plus-square" aria-hidden="true"></i> SASS</li>
                                 <li><i class="fa fa-plus-square" aria-hidden="true"></i> Gulp</li>
+                                <li><i class="fa fa-plus-square" aria-hidden="true"></i> Webpack</li>
                                 <li><i class="fa fa-plus-square" aria-hidden="true"></i> JavaScript</li>
-                                <li><i class="fa fa-plus-square" aria-hidden="true"></i> GreenSock</li>
                                 <li><i class="fa fa-plus-square" aria-hidden="true"></i> ReactJS</li>
                             </ul>
                         </div>
@@ -97,7 +104,7 @@
                 <button class="btn" data-filter=".site">Sites</button>
             </div>
             <div class="row grid">
-                <article class="project-item col-xs-12 col-sm-6 col-md-4 text-xs-center javascript"  data-category="javascript">
+                <article class="project-item col-xs-12 col-sm-6 col-md-4 text-xs-center javascript" data-category="javascript">
                     <div class="thumbnail">
                         <img class="img-fluid" src="img/projects/js-calculator.JPG" alt="">
                         <div class="info">
@@ -173,7 +180,7 @@
         </div>
     </section>
 
-    <section id="contact">
+    <!--    <section id="contact">
         <div class="container">
             <h2 class="section-title">Contact Me</h2>
             <div class="moustache">
@@ -191,22 +198,25 @@
                 <button class="btn btn-default btn-block" type="submit">Send</button>
             </form>
         </div>
-    </section>
+    </section>-->
 
-    <footer>
+    <footer id="connect">
         <div class="container">
             <div class="social-links">
-                <a href="#">
+                <a href="https://www.google.co.ve/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=instagram+gilsjhonny&*">
                     <i class="fa fa-instagram" aria-hidden="true"></i>
                 </a>
-                <a href="#">
+                <a href="https://twitter.com/gilsjhonny">
                     <i class="fa fa-twitter-square" aria-hidden="true"></i>
                 </a>
-                <a href="#">
+                <a href="http://codepen.io/gilsjhonny/">
                     <i class="fa fa-codepen" aria-hidden="true"></i>
                 </a>
-                <a href="#">
+                <a href="https://www.freecodecamp.com/gilsjhonny">
                     <i class="fa fa-free-code-camp" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/gilsjhonny">
+                    <i class="fa fa-github" aria-hidden="true"></i>
                 </a>
             </div>
             <p>Crafted and Coded with love by Jhonny Gil</p>
@@ -216,18 +226,36 @@
     <!--        Scripts JS         -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/10.2.1/js/smooth-scroll.min.js"></script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
     <script>
+        $(window).scroll(function () {
+
+            var nav = $('.menu-header');
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                nav.addClass("nav-transform");
+            } else {
+                nav.removeClass("nav-transform");
+            }
+        });
+
+        smoothScroll.init({
+            speed: 1000,
+            offset: -45
+        });
+
         // init Isotope
         var $grid = $('.grid').isotope({
-        itemSelector: '.project-item',
-        layoutMode: 'fitRows',
+            itemSelector: '.project-item',
+            layoutMode: 'fitRows',
         });
 
         // bind filter button click
-        $('#filters').on( 'click', 'button', function() {
-            var filterValue = $( this ).attr('data-filter');
+        $('#filters').on('click', 'button', function () {
+            var filterValue = $(this).attr('data-filter');
             filterValue = filterValue;
             $grid.isotope({ filter: filterValue });
         });
