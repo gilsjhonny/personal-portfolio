@@ -1,502 +1,483 @@
-// TO-DO
-
-@import url('https://fonts.googleapis.com/css?family=Arvo:400,700|Domine');
+@import url('https://fonts.googleapis.com/css?family=Arvo:400,700|Domine|Inconsolata');
 //-----------------------------
-//  COLOR SCHEME
+//  Variables
 //-----------------------------
-$bg:                   #E0D0B8;
-$calm     :            #A69C90;
-$section-title-color:  #565853;
-$emphasis:             #246C5B;
-$moustache:            #42332C;
-$font-color:           #30312C;
-$nav-bg:               #c5b69f;
-$title-font-family: 'Arvo', serif;
-
+$bg: #d8d1c7;
+$calm: #A69C90;
+$section-title-color: #565853;
+$emphasis: #246C5B;
+$moustache: #42332C;
+$font-color: #30312C;
+$nav-bg: #b1a99c;
+$title-font-family: 'Arvo',
+serif;
 //-----------------------------
 //  MIXINS
 //-----------------------------
-
 @mixin title {
-    &.section-title {
-        color: $section-title-color;
-        text-transform: uppercase;
-        font-family: $title-font-family;
-        font-weight: 700;
-        text-align: center;
-        border-top: 2px solid $calm;
-        border-bottom: 2px solid $calm;
-        margin-bottom: 20px;
-        padding: 8px;
-    }
+  &.section-title {
+    color: $section-title-color;
+    text-transform: uppercase;
+    font-family: $title-font-family;
+    font-weight: 700;
+    text-align: center;
+    border-top: 2px solid $calm;
+    border-bottom: 2px solid $calm;
+    margin-bottom: 20px;
+    padding: 8px;
+  }
 }
 
 @mixin subTitle {
-    &.sub-title {
-        color: $section-title-color;
-        text-transform: uppercase;
-        font-family: $title-font-family;
-        text-align: left;
-        border-bottom: 2px solid $calm;
-        margin-bottom: 15px;
-        padding: 5px;
-    }
+  &.sub-title {
+    color: $section-title-color;
+    text-transform: uppercase;
+    font-family: $title-font-family;
+    text-align: left;
+    border-bottom: 2px solid $calm;
+    margin-bottom: 15px;
+    padding: 5px;
+  }
 }
 
 @mixin sectionPadding {
-    padding: 15px 0;
+  padding: 15px 0;
 }
 
-@mixin button-hover($color, $perc: 20%) {
-    &:hover {
-        background: darken($color, $perc);
-    }
+@mixin button-hover($color,
+$perc: 20%) {
+  &:hover {
+    background: darken($color, $perc);
+  }
 }
+
 //-----------------------------
-
-
 html {
-    font-size: 15px;
-    text-rendering: optimizeLegibility !important;
-    -webkit-font-smoothing: antialiased !important;
+  font-size: 15px;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
 }
 
 body {
-    background: $bg;
-    position: relative;
+  background: $bg;
+  position: relative;
 }
 
 p {
-    color: $font-color;
-    font-family: 'Domine', serif;
+  color: $font-color;
+  font-family: 'Domine', serif;
 }
 
 h2 {
-    @include title();
+  @include title();
 }
 
 h3 {
-    @include subTitle();
+  @include subTitle();
 }
 
 ::selection {
-  background: #67BDA9; /* WebKit/Blink Browsers */
-}
-::-moz-selection {
-  background: #67BDA9; /* Gecko Browsers */
+  background: #67BDA9;
+  /* WebKit/Blink Browsers */
 }
 
+::-moz-selection {
+  background: #67BDA9;
+  /* Gecko Browsers */
+}
 
 //-----------------------------
 //  Navigation
 //-----------------------------
 #navigation {
-
-    .menu-header {
-        background: $nav-bg;
-        border-bottom: 10px solid $section-title-color;
+  .menu-header {
+    background: $nav-bg;
+    border-bottom: 10px solid $section-title-color;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .menu-btn {
+    background: transparent;
+    display: inline-block;
+    border: transparent;
+    font-size: 3rem;
+    line-height: 4rem;
+    color: $section-title-color;
+    margin: 0 0 .3rem auto;
+    cursor: pointer;
+    &:focus {
+      outline: 0;
     }
-
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-
-    .menu-btn {
-        background: transparent;
-        display: inline-block;
-        border: transparent;
-        font-size: 3rem;
-        line-height: 4rem;
-        color: $section-title-color;
-        margin: 0 0 .3rem auto;
-        cursor: pointer;
-
-        &:focus {
-            outline: 0;
+  }
+  #nav-menu {
+    flex: 1 1 100%;
+    ul {
+      margin: .5rem 0 0 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      li {
+        a {
+          color: $section-title-color;
+          text-decoration: none;
+          text-transform: uppercase;
+          text-align: center;
+          display: block;
+          padding: 1rem 0;
+          font-family: 'Arvo', serif;
+          font-size: 1.2rem;
+          border-top: 2px solid $calm;
+          transition: all .1s ease-in-out;
+          &:hover {
+            color: $section-title-color;
+          }
         }
+      }
     }
-
-    #nav-menu {
-        flex: 1 1 100%;
-
-        ul {
-            margin: .5rem 0 0 0;
-            padding: 0;
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            li {
-
-                a {
-                    color: $section-title-color;
-                    text-decoration: none;
-                    text-transform: uppercase;
-                    text-align: center;
-                    display: block;
-                    padding: 1rem 0;
-                    font-family: 'Arvo', serif;
-                    font-size: 1.2rem;
-                    border-top: 2px solid $calm;
-                    transition: all .1s ease-in-out;
-
-                    &:hover {
-                        color: $section-title-color;
-                    }
-                }
-            }
-        }
-    }
-
-
+  }
 }
-
 
 //-----------------------------
 //  Header
 //-----------------------------
-
 header {
-    margin-top: 150px;
-    margin-bottom: 50px;
-    position:relative;
-
-    img.brand {
-        margin-bottom: 10px;
+  margin-top: 150px;
+  margin-bottom: 50px;
+  position: relative;
+  img.brand {
+    margin-bottom: 10px;
+  }
+  .down-arrow {
+    font-size: 6rem;
+    line-height: 4rem;
+    text-align: center;
+    animation: bouncing 1s ease-in infinite;
+    a {
+      color: $section-title-color;
+      &:hover {
+        color: $section-title-color
+      }
+      &:focus {
+        outline: 0;
+      }
     }
-    .down-arrow {
-        font-size: 6rem;
-        line-height: 4rem;
-        text-align: center;
-        animation: bouncing 1s ease-in infinite;
-        a {
-            color: $section-title-color;
-
-            &:hover {
-                color: $section-title-color
-            }
-
-            &:focus {
-                outline: 0;
-            }
-        }
-    }
+  }
 }
 
 //-----------------------------
 //  About
 //-----------------------------
-
 #about {
-    @include sectionPadding();
+  @include sectionPadding();
 
-    .profile-pic {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 20px;
+  .profile-pic-col {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
 
-        img {
-            width: 100%;
-        }
+  .profile-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: lighten($calm, 3%);
+    border-bottom: 5px solid $section-title-color;
+    margin-bottom: 20px;
+    text-align: center;
+
+    img {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      border: 3px solid $calm;
     }
 
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-
-
-        li {
-            color: $font-color;
-            font-family: 'Domine', serif;
-            text-transform: uppercase;
-
-            .fa {
-                color: $calm;
-                margin-right: 5px;
-            }
-        }
+    .quote {
+      font-family: 'Inconsolata', serif;
+      font-size: .9rem;
+      color: lighten($font-color,20%);
+      padding: 0 .5rem;
     }
-
-    .skills .row > *:last-child {
-        border-left: 2px solid $calm;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      color: $font-color;
+      font-family: 'Domine', serif;
+      text-transform: uppercase;
+      .fa {
+        color: $calm;
+        margin-right: 5px;
+      }
     }
-
+  }
+  .skills .row > *:last-child {
+    border-left: 2px solid $calm;
+  }
 }
 
 //-----------------------------
 //  Projects
 //-----------------------------
-
 #projects {
-    @include sectionPadding();
-
-    #filters {
-
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-bottom: 5px;
-
-        button {
-            background: transparent;
-            border: 2px solid $calm;
-            color: $section-title-color;
-            transition: all .1s ease-in;
-            border-radius: 0;
-            margin-bottom: 10px;
-
-            &:not(:last-child) {
-                margin-right: 10px;
-            }
-
-            &:hover {
-                background: $calm;
-            }
-
-            &:focus,
-            &:active {
-                background: $calm;
-                outline: 0;
-                box-shadow: none;
-            }
-        }
+  @include sectionPadding();
+  #filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+    button {
+      background: transparent;
+      border: 2px solid $calm;
+      color: $section-title-color;
+      transition: all .1s ease-in;
+      border-radius: 0;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-family: 'Domine', serif;
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+      &.is-checked,
+      &:hover {
+        background: $calm;
+      }
+      &:focus,
+      &:active {
+        background: $calm;
+        outline: 0;
+        box-shadow: none;
+      }
     }
-
-    /* clear fix */
-    .grid:after {
-        content: '';
-        display: block;
-        clear: both;
+  }
+  /* clear fix */
+  .grid:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  article {
+    position: relative;
+    overflow: hidden;
+    padding: 15px;
+    .thumbnail {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      .info {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        height: 100%;
+        background: $calm;
+        z-index: 2;
+        transition: all .2s ease-in-out;
+        h4 {
+          margin-top: 11%;
+          color: $section-title-color;
+          font-family: $title-font-family;
+          font-weight: 700;
+          font-size: 1.5rem;
+        }
+        a:hover {
+          color: $section-title-color;
+        }
+      }
+      &:hover .info {
+        top: 65%;
+      }
     }
-
-    article {
-        position: relative;
-        overflow: hidden;
-        padding: 15px;
-        cursor: pointer;
-
-        .thumbnail {
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-
-            .info {
-                position: absolute;
-                top: 100%;
-                width: 100%;
-                height: 100%;
-                background: $calm;
-                z-index: 2;
-                transition: all .2s ease-in-out;
-
-                h4 {
-                    margin-top: 11%;
-                    color: $section-title-color;
-                    font-family: $title-font-family;
-                    font-weight: 700;
-                    font-size: 1.5rem;
-                }
-            }
-
-            &:hover .info{
-                top: 65%;
-            }
-        }
-
-        img {
-            padding: 5px;
-            border: 2px solid $calm;
-            filter: grayscale(100%);
-            transition: all .5s ease-in-out;
-        }
-
-        &:hover img {
-            filter: grayscale(0);
-        }
+    img {
+      padding: 5px;
+      border: 2px solid $calm;
+      filter: grayscale(100%);
+      transition: all .5s ease-in-out;
     }
+    &:hover img {
+      filter: grayscale(0);
+    }
+  }
 }
 
 //-----------------------------
 //  contact
 //-----------------------------
-
 #contact {
-    @include sectionPadding();
-
-    form .form-group {
-        position: relative;
-        margin-bottom: 15px;
+  @include sectionPadding();
+  form .form-group {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  form {
+    input {
+      padding: 15px 10px 15px 70px;
     }
-
-    form {
-
-        input {
-            padding: 15px 10px 15px 70px;
-        }
-
-        label {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            color: $calm;
-            font-family: 'Noto Serif', serif;
-            text-transform: uppercase;
-        }
-
-        input,
-        textarea {
-            border-radius: 0px;
-            background: transparent;
-            margin-bottom: 15px;
-            transition: all .3s ease-in;
-        }
-
-        input:active,
-        input:focus,
-        textarea:active,
-        textarea:focus {
-            border: 1px solid $calm;
-            box-shadow: 0 0 15px $calm inset;
-        }
-
+    label {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      color: $calm;
+      font-family: 'Domine', serif;
+      text-transform: capitalize;
     }
-
-    button {
-        background: $calm;
-        border-radius: 0px;
-        color: $section-title-color;
-        padding: 15px 10px;
-        text-transform: uppercase;
-        font-family: $title-font-family;
-        font-size: 1.5rem;
-        font-weight: 700;
-        transition: all .2s ease-in;
-
-        &:hover {
-            color: $calm;
-            background: $section-title-color;
-        }
+    input,
+    textarea {
+      border-radius: 0px;
+      background: transparent;
+      margin-bottom: 15px;
+      transition: box-shadow .3s ease-in;
     }
-
+    input:active,
+    input:focus,
+    textarea:active,
+    textarea:focus {
+      border: 1px solid $calm;
+      box-shadow: 0 0 2px $calm inset;
+    }
+  }
+  button {
+    background: $calm;
+    border-radius: 0px;
+    color: $section-title-color;
+    padding: 15px 10px;
+    text-transform: uppercase;
+    font-family: $title-font-family;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: all .2s ease-in;
+    cursor: pointer;
+    &:hover {
+      color: $calm;
+      background: $section-title-color;
+    }
+  }
 }
 
 //-----------------------------
 //  Footer
 //-----------------------------
 footer {
-    @include sectionPadding();
-    text-align: center;
-
-    .social-links {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin-bottom: 10px;
-        border-top: 2px solid $calm;
-        border-bottom: 2px solid $calm;
-        padding: 15px;
-
-        a {
-            color: $section-title-color;
-            font-size: 2.5rem;
-            transition: all .3s ease-in;
-
-            &:hover {
-                color: $calm;
-            }
-        }
+  @include sectionPadding();
+  text-align: center;
+  .social-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+    border-top: 2px solid $calm;
+    border-bottom: 2px solid $calm;
+    padding: 15px;
+    a {
+      color: $section-title-color;
+      font-size: 2.5rem;
+      transition: all .3s ease-in;
+      &:hover {
+        color: $calm;
+      }
     }
-
-    p {
-        color: lighten($font-color, 30%);
-        margin: 0;
-        padding: 0;
-    }
+  }
+  p {
+    color: lighten($font-color, 30%);
+    margin: 0;
+    padding: 0;
+  }
 }
 
-
+//-----------------------------
+//  Animations
+//-----------------------------
 @keyframes bouncing {
-    from {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(5px);
-    }
-    to {
-        transform: translateY(0);
-    }
+  from {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 //-----------------------------
 //  Media Queries
 //-----------------------------
-
 @media (min-width: 576px) {
-
-    #projects article .thumbnail .info h4 {
-        font-size: 1rem;
-    }
-
+  #projects article .thumbnail .info h4 {
+    font-size: 1rem;
+  }
 }
 
 @media (min-width: 768px) {
-
-    html {
-        font-size: 16px;
+  html {
+    font-size: 16px;
+  }
+  #navigation {
+    .menu-header {
+      background: transparent;
+      border-bottom: 2px solid $section-title-color;
+      background: $nav-bg;
+      border-bottom: 2px solid $section-title-color;
+      transition: border .4s ease-in;
+      &.nav-transform {
+        background: $nav-bg;
+        border-bottom: 6px solid $section-title-color;
+      }
     }
-
-    #navigation {
-
-        .menu-header {
-            background: transparent;
-            border-bottom: 2px solid $section-title-color;
-            transition: border .4s ease-in;
-
-            &.nav-transform {
-                background: $nav-bg;
-                border-bottom: 6px solid $section-title-color;
-            }
+    #nav-menu {
+      height: auto !important;
+      display: block;
+      ul {
+        flex-direction: row;
+        justify-content: space-between;
+        li a {
+          color: $section-title-color;
+          padding: 1rem 1rem;
+          width: 160px;
+          border: 2px solid transparent;
+          transition: all .2s ease-in-out;
+          margin-bottom: 10px;
+          &:hover {
+            outline-width: 0;
+            background: $bg;
+            border: 2px solid darken($calm, 5%);
+          }
         }
-
-        #nav-menu {
-            height: auto !important;
-            display: block;
-
-            ul {
-                flex-direction: row;
-                justify-content: space-between;
-
-                li a {
-                    color: #565853;
-                    padding: 1rem 1rem;
-                    width: 160px;
-                    border: 2px solid transparent;
-                    transition: all .2s ease-in-out;
-                    margin-bottom: 10px;
-
-                    &:hover {
-                        outline-width: 0;
-                        background: #E0D0B8;
-                        border: 2px solid #756a5c;
-                    }
-                }
-            }
-        }
+      }
     }
-
-
+  }
 }
+
+
+@media (min-width: 992px) {
+  #about .skills li {
+    margin-bottom: 20px;
+    text-transform: capitalize;
+  }
+}
+
 
 @media (min-width: 1200px) {
-
-    #projects article .thumbnail .info h4 {
-        font-size: 1.5rem;
+  header {
+    .container {
+      text-align: center;
     }
-
+    .brand {
+      height: 50vh;
+      margin: 0 auto;
+    }
+  }
+  #about .skills li {
+    margin-bottom: 14px;
+    text-transform: capitalize;
+  }
+  #projects article .thumbnail .info h4 {
+    font-size: 1.5rem;
+  }
 }
-
