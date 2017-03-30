@@ -1,3 +1,4 @@
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
 @import url('https://fonts.googleapis.com/css?family=Arvo:400,700|Domine|Inconsolata');
 //-----------------------------
 //  Variables
@@ -9,6 +10,7 @@ $emphasis: #246C5B;
 $moustache: #42332C;
 $font-color: #30312C;
 $nav-bg: #b1a99c;
+$picture-bg: lighten($calm, 5%);
 $title-font-family: 'Arvo',
 serif;
 //-----------------------------
@@ -89,55 +91,50 @@ h3 {
 //-----------------------------
 //  Navigation
 //-----------------------------
-#navigation {
-  .menu-header {
-    background: $nav-bg;
-    border-bottom: 10px solid $section-title-color;
+
+// New Navbar
+.navbar {
+  background: #b1a99c;
+  border-bottom: 8px solid #565853;
+  font-family: 'Arvo', serif;
+  padding: 0;
+
+  .navbar-brand {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      color: darken($calm,10%);
+      font-weight: 700;
+      transition: all .3s ease-in;
+      &:hover,
+      &:focus {
+        color: $section-title-color;
+      }
   }
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .menu-btn {
-    background: transparent;
-    display: inline-block;
-    border: transparent;
-    font-size: 3rem;
-    line-height: 4rem;
-    color: $section-title-color;
-    margin: 0 0 .3rem auto;
+
+  button.navbar-toggler {
+    border: 0;
+    font-size: 2rem;
+        padding-top: 1rem;
     cursor: pointer;
     &:focus {
-      outline: 0;
+      outline: 1px solid $calm;
     }
   }
-  #nav-menu {
-    flex: 1 1 100%;
-    ul {
-      margin: .5rem 0 0 0;
-      padding: 0;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      li {
-        a {
-          color: $section-title-color;
-          text-decoration: none;
-          text-transform: uppercase;
-          text-align: center;
-          display: block;
-          padding: 1rem 0;
-          font-family: 'Arvo', serif;
-          font-size: 1.2rem;
-          border-top: 2px solid $calm;
-          transition: all .1s ease-in-out;
-          &:hover {
-            color: $section-title-color;
-          }
-        }
-      }
+
+  .navbar-nav .nav-item {
+    border-top: 2px solid #a69c90;
+    font-size: 1rem;
+    padding: .5rem 0;
+    text-transform: uppercase;
+    & > * {
+      border: 2px solid transparent;
+      transition: border .3s ease-in, background .3s ease-in,;
+    }
+
+    .active {
+      background: #d8d1c7;
+      border: 2px solid #9b8f82;
+
     }
   }
 }
@@ -186,7 +183,8 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: lighten($calm, 3%);
+    background: $picture-bg;
+    background-size: 3px 3px;
     border-bottom: 5px solid $section-title-color;
     margin-bottom: 20px;
     text-align: center;
@@ -373,7 +371,7 @@ footer {
     margin-bottom: 10px;
     border-top: 2px solid $calm;
     border-bottom: 2px solid $calm;
-    padding: 15px;
+    padding: 30px;
     a {
       color: $section-title-color;
       font-size: 2.5rem;
@@ -408,6 +406,16 @@ footer {
 //-----------------------------
 //  Media Queries
 //-----------------------------
+
+@media (max-width: 576px) {
+  .navbar .container {
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
 @media (min-width: 576px) {
   #projects article .thumbnail .info h4 {
     font-size: 1rem;
@@ -418,40 +426,23 @@ footer {
   html {
     font-size: 16px;
   }
-  #navigation {
-    .menu-header {
-      background: transparent;
-      border-bottom: 2px solid $section-title-color;
-      background: $nav-bg;
-      border-bottom: 2px solid $section-title-color;
-      transition: border .4s ease-in;
-      &.nav-transform {
-        background: $nav-bg;
-        border-bottom: 6px solid $section-title-color;
-      }
-    }
-    #nav-menu {
-      height: auto !important;
-      display: block;
-      ul {
-        flex-direction: row;
-        justify-content: space-between;
-        li a {
-          color: $section-title-color;
-          padding: 1rem 1rem;
-          width: 160px;
-          border: 2px solid transparent;
-          transition: all .2s ease-in-out;
-          margin-bottom: 10px;
-          &:hover {
-            outline-width: 0;
-            background: $bg;
-            border: 2px solid darken($calm, 5%);
-          }
-        }
-      }
+
+  .navbar {
+    border-bottom: 3px solid #565853;
+    transition: border .3s ease-in;
+
+    &.nav-transform {
+      border-bottom: 8px solid $section-title-color;
     }
   }
+
+  .navbar .navbar-nav .nav-item {
+      border-top: 0;
+      flex: 1 1 130px;
+      margin-left: 1.5rem;
+      font-size: 1rem;
+  }
+
 }
 
 
@@ -459,6 +450,11 @@ footer {
   #about .skills li {
     margin-bottom: 20px;
     text-transform: capitalize;
+  }
+
+  .navbar .navbar-nav .nav-item {
+      margin-left: 2rem;
+      font-size: 1.1rem;
   }
 }
 
